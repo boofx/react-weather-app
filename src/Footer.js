@@ -6,7 +6,7 @@ export default function Footer() {
     <div className="git-link">
       <span>
         Created by Zena Issa - view on
-        <a href="https://github.com/boofx/Weather-App"> Github </a>
+        <a href="https://github.com/boofx/react-weather-app"> Github </a>
       </span>
     </div>
   );

@@ -5,8 +5,11 @@ export default function Footer() {
   return (
     <div className="git-link">
       <span>
-        Created by Zena Issa - view on
-        <a href="https://github.com/boofx/react-weather-app"> Github </a>
+        This project was coded by Zena Issa and is
+        <a href="https://github.com/boofx/react-weather-app">
+          {" "}
+          open-sourced on Github{" "}
+        </a>
       </span>
     </div>
   );

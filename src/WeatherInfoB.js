@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherUnit from "./WeatherUnit";
+import "./WeatherInfoB.css";
 
 export default function WeatherInfoB(props) {
   return (

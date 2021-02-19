@@ -1,46 +1,31 @@
 import React, { useState } from "react";
+import WeatherForecastPreview from "./WeatherForecastPreview";
 import axios from "axios";
 import "./Forecast.css";
 
 export default function Forecast(props) {
-  const [result, setResult] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [forecast, setForecast] = useState(null);
 
-  function handleResponse(response) {
+  function handleForecastResponse(response) {
     setForecast(response.data);
-    setReturn(true);
+    setLoaded(true);
   }
-
-  <div className="row">
-    <div className="col">
-      <strong>23:00</strong>
-      <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
-      <h3> 14° 12°</h3>
-    </div>
-    <div className="col">
-      <strong>02:00</strong>
-      <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
-      <h3> 17° 16°</h3>
-    </div>
-    <div className="col">
-      <strong>05:00</strong>
-      <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
-      <h3> 20° 19°</h3>
-    </div>
-    <div className="col">
-      <strong>08:00</strong>
-      <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
-      <h3> 19° 19°</h3>
-    </div>
-    <div className="col">
-      <strong>11:00</strong>
-      <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
-      <h3> 17° 17°</h3>
-    </div>
-    <div className="col">
-      <strong>14:00</strong>
-      <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" />
-      <h3> 16° 16°</h3>
-    </div>
-  </div>;
+  if (loaded) {
+    return (
+      <div className="row">
+        <WeatherForecastPreview data={forecast.list[0]} />
+        <WeatherForecastPreview data={forecast.list[1]} />
+        <WeatherForecastPreview data={forecast.list[2]} />
+        <WeatherForecastPreview data={forecast.list[3]} />
+        <WeatherForecastPreview data={forecast.list[4]} />
+        <WeatherForecastPreview data={forecast.list[5]} />
+      </div>
+    );
+  } else {
+    let apiKey = "bc0b0c73f0c3380ab48613cc0c13531d";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&units=metric&appid=${apiKey}
+      `;
+    axios.get(apiUrl).then(handleForecastResponse);
+  }
 }

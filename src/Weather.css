@@ -1,4 +1,4 @@
-.container {
+.Weather {
   background-color: #25252c;
   border-style: ridge;
   border: 5px solid;
@@ -10,35 +10,6 @@
   padding-right: 20px;
   text-align: center;
 }
-
-h1 {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  text-align: left;
-  margin-top: 40px;
-}
-h2 {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  text-align: center;
-  margin-top: 50px;
-  margin-bottom: 5px;
-}
-.temperature {
-  font-size: 60px;
-  color: white;
-}
-#current-data {
-  text-transform: capitalize;
-  padding-top: 40px;
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  text-align: center;
-}
-
 #look-up {
   margin: 10px auto;
   margin-left: 5px;
@@ -58,31 +29,4 @@ button :hover {
   border-radius: 5px;
   font-weight: 500;
   color: rgb(221, 128, 40);
-}
-p {
-  color: white;
-  display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-}
-li {
-  list-style: none;
-}
-.min-max {
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-#con {
-  text-align: center;
-  color: white;
-  font-weight: 500;
-  font-size: 18px;
-  margin-top: 50px;
-  margin-right: auto;
-  margin-left: auto;
-}
-#units {
-  margin-top: 10px;
-  position: relative;
-  font-size: 20px;
 }

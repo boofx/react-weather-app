@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Weather from "./Weather";
-import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Weather.css";
 import "./index.css";
@@ -12,7 +11,6 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
     <Weather />
-    <Footer />
   </React.StrictMode>,
   document.getElementById("root")
 );

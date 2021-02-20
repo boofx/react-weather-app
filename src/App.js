@@ -1,14 +1,12 @@
 import React from "react";
-import "./Weather.css";
-import "./App.css";
 import Weather from "./Weather";
+import "./App.css";
 
 export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
-
+        <Weather defaultCity="Melbourne" />
         <footer>
           This project was coded by Zena Issa and is
           <a href="https://github.com/boofx/react-weather-app">

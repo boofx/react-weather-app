@@ -16,26 +16,25 @@ export default function Weather(props) {
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       temperature: Math.round(response.data.main.temp),
-      iconUrl: `http://openweathermap.org/img/wn${response.data.weather[0].icon}@2x,png`,
+      icon: response.data.weather[0].icon,
       min: response.data.main.temp_min,
       max: response.data.main.temp_max,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
     });
   }
-  function search() {
-    const apiKey = "bc0b0c73f0c3380ab48613cc0c13531d";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&units=metric&appid=${apiKey}
-      `;
-    axios.get(apiUrl).then(handleResponse);
-  }
-
   function handleSubmit(event) {
     event.preventDefault();
     search(city);
   }
   function updateCity(event) {
     setCity(event.target.value);
+  }
+  function search() {
+    const apiKey = "bc0b0c73f0c3380ab48613cc0c13531d";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}
+      `;
+    axios.get(apiUrl).then(handleResponse);
   }
 
   if (Weather.ready) {

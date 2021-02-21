@@ -7,14 +7,14 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Melbourne" />
-        <footer>
-          This project was coded by Zena Issa and is
-          <a href="https://github.com/boofx/react-weather-app">
-            {" "}
-            open-sourced on GitHub{" "}
-          </a>
-        </footer>
       </div>
+      <footer>
+        This project was coded by Zena Issa and is
+        <a href="https://github.com/boofx/react-weather-app">
+          {" "}
+          open-sourced on GitHub{" "}
+        </a>
+      </footer>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import WeatherUnit from "./WeatherUnit";
-import WeatherIcons from "./WeatherIcons";
 import "./WeatherInfoB.css";
 
 export default function WeatherInfoB(props) {
@@ -10,7 +9,7 @@ export default function WeatherInfoB(props) {
         <WeatherUnit celsius={props.data.temperature} />
       </div>
       <div className="col-4">
-        <WeatherIcons code={props.data.icon} alt={props.data.description} />
+        <img src={props.data.icon} alt={props.data.description} />
         <p className="min-max">
           <span id="min">Min: {props.data.min}°C</span>|{" "}
           <span id="max"> Max: {props.data.max}°C</span>

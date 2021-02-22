@@ -15,7 +15,7 @@ export default function WeatherForecastPreview(props) {
     <div className="col">
       <strong>{hours()}</strong>
       <img
-        src={`http://openweathermap.org/img/wn${props.data.weather[0].icon}@2x.png`}
+        src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
         alt="weather"
       />
       <h3> {temperature()}</h3>

@@ -35,6 +35,18 @@ export default function Weather(props) {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
+  function retrievePosition(position) {
+    const apiKey = "bc0b0c73f0c3380ab48613cc0c13531d";
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(url).then(handleResponse);
+  }
+  function showPosition(event) {
+    navigator.geolocation.getCurrentPosition(retrievePosition);
+  }
+  let currentLocationButton = document.querySelector("#current-location");
+  currentLocationButton.addEventListener("click", showPosition);
 
   if (weather.ready) {
     return (

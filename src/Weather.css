@@ -22,7 +22,7 @@ button :hover {
   opacity: 0.9;
   cursor: pointer;
 }
-#current-location {
+.CurrentLocation {
   margin: 10px auto;
   margin-left: 5px;
   background-color: #333350;

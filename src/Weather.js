@@ -45,8 +45,6 @@ export default function Weather(props) {
   function showPosition(event) {
     navigator.geolocation.getCurrentPosition(retrievePosition);
   }
-  let currentLocationButton = document.querySelector("#current-location");
-  currentLocationButton.addEventListener("click", showPosition);
 
   if (weather.ready) {
     return (
@@ -62,7 +60,9 @@ export default function Weather(props) {
           <button type="submit" value="search" id="look-up">
             Search
           </button>
-          <button id="current-location">Current Location</button>
+          <button className="CurrentLocation" onClick={showPosition}>
+            Current Location
+          </button>
         </form>
         <WeatherInfoB data={weather} />
         <Forecast city={weather.city} />
